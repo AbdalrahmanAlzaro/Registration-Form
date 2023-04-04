@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration Form</h1>
+
+      
+      <form onsubmit="saveFormData(event)" id="registration-form">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
+        <div id="username-error" class="error-message"></div>
+        
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" id="password" required>
+        <div id="password-error" class="error-message"></div>
+        
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email" id="email" required>
+        <div id="email-error" class="error-message"></div>
+        
+        <label for="phone"><b>Phone Number</b></label>
+        <input type="tel" placeholder="Enter Phone Number" name="phone" id="phone" pattern="07\d{8}" required>
+        <div id="phone-error" class="error-message"></div>
+        
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+
+
+
+
+    </body>
+    </html>
+    
+    
+    <!-- <script>
+      // Function to save form data into session storage
+      function saveFormData(event) {
+        event.preventDefault();
+        
+        // Validate form inputs
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        
+        let isValid = true;
+        if (/\s/.test(username)) {
+          document.getElementById("username-error").textContent = "Username cannot contain spaces";
+          isValid = false;
+        } else {
+          document.getElementById("username-error").textContent = "";
+        }
+        
+        if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/.test(password) || password.length < 8) {
+          document.getElementById("password-error").textContent = "Password must be at least 8 characters long and contain at least 1 number, uppercase letter, and special -->
